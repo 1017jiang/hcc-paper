@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>文献精读｜外周血IFN-γ⁺细胞与肝癌免疫治疗应答</title>
+<style>
+* { -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── 顶部标题区 ── */
+.hero {
+  background: linear-gradient(135deg, #4a41b0 0%, #6c5ce7 100%);
+  padding: 28px 18px 24px;
+  text-align: center;
+  color: #fff;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+}
+.hero h1 {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.hero-meta {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.hero-meta-item {
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ── 导航 tab ── */
+.nav-wrap {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  scrollbar-width: none;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-wrap::-webkit-scrollbar { display: none; }
+.nav-inner {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0 6px;
+}
+.nav-tab {
+  display: inline-block;
+  font-size: 13px;
+  color: #888;
+  padding: 12px 12px;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: color 0.15s;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: none;
+  white-space: nowrap;
+}
+.nav-tab.active {
+  color: #4a41b0;
+  border-bottom-color: #4a41b0;
+  font-weight: 600;
+}
+
+/* ── 内容区 ── */
+.main { padding: 14px 14px 50px; }
+.section { display: none; }
+.section.show { display: block; }
+
+/* ── 区块标题 ── */
+.sec-header { margin-bottom: 16px; }
+.sec-header h2 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; line-height: 1.4; }
+.sec-header p { font-size: 13px; color: #888; line-height: 1.5; }
+
+/* ── 卡片 ── */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.card-accent { border-left: 4px solid #534AB7; border-radius: 0 12px 12px 0; }
+.card-title { font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px; }
+
+/* ── 标签 ── */
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.tag-purple { background: #EEEDFE; color: #3C3489; }
+.tag-teal { background: #E1F5EE; color: #085041; }
+.tag-amber { background: #FAEEDA; color: #633806; }
+.tag-coral { background: #FAECE7; color: #712B13; }
+.tag-green { background: #EAF3DE; color: #27500A; }
+
+/* ── 正文 ── */
+.body-text { font-size: 14px; color: #333; line-height: 1.85; }
+.body-text p { margin-bottom: 10px; }
+.body-text p:last-child { margin-bottom: 0; }
+.hl { background: #EEEDFE; color: #3C3489; padding: 1px 5px; border-radius: 4px; font-weight: 600; }
+.hl-teal { background: #E1F5EE; color: #0F6E56; padding: 1px 5px; border-radius: 4px; font-weight: 600; }
+.hl-coral { background: #FAECE7; color: #993C1D; padding: 1px 5px; border-radius: 4px; font-weight: 600; }
+
+/* ── 数据指标卡 ── */
+.metric-row {
+  display: -webkit-flex;
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+.metric {
+  -webkit-flex: 1;
+  flex: 1;
+  background: #f8f7fc;
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+}
+.metric-val { font-size: 20px; font-weight: 700; }
+.metric-label { font-size: 11px; color: #888; margin-top: 3px; line-height: 1.4; }
+
+/* ── 流程图 ── */
+.flow-list { display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; gap: 6px; margin: 12px 0; -webkit-align-items: center; align-items: center; }
+.flow-box { background: #f2f1f8; border-radius: 8px; padding: 7px 10px; font-size: 12px; color: #333; text-align: center; }
+.flow-arrow { color: #bbb; font-size: 14px; }
+
+/* ── Finding 行 ── */
+.finding-row { display: -webkit-flex; display: flex; -webkit-align-items: flex-start; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.finding-row:last-child { border-bottom: none; }
+.fi-icon { width: 30px; height: 30px; min-width: 30px; border-radius: 50%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; font-size: 12px; font-weight: 700; }
+.fi-purple { background: #EEEDFE; color: #534AB7; }
+.fi-teal { background: #E1F5EE; color: #0F6E56; }
+.fi-coral { background: #FAECE7; color: #993C1D; }
+.fi-amber { background: #FAEEDA; color: #854F0B; }
+.finding-text { font-size: 13.5px; color: #333; line-height: 1.75; -webkit-flex: 1; flex: 1; }
+.finding-text strong { font-weight: 600; color: #1a1a1a; }
+
+/* ── AUC 进度条 ── */
+.auc-section { margin: 12px 0; }
+.auc-row { display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; gap: 8px; margin: 7px 0; }
+.auc-name { font-size: 12px; color: #666; width: 96px; min-width: 96px; }
+.auc-track { -webkit-flex: 1; flex: 1; height: 22px; background: #f0f0f0; border-radius: 5px; overflow: hidden; }
+.auc-fill { height: 100%; border-radius: 5px; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: flex-end; justify-content: flex-end; padding-right: 8px; font-size: 11px; font-weight: 700; }
+.fill-purple { background: #AFA9EC; color: #26215C; }
+.fill-teal { background: #5DCAA5; color: #04342C; }
+.fill-coral { background: #F0997B; color: #4A1B0C; }
+.fill-gray { background: #C8C7C0; color: #3a3a36; }
+
+/* ── 对比双栏 ── */
+.compare-row { display: -webkit-flex; display: flex; gap: 8px; margin: 12px 0; }
+.compare-card { -webkit-flex: 1; flex: 1; padding: 12px; border-radius: 10px; }
+.vs-good { background: #EAF3DE; }
+.vs-bad { background: #FCEBEB; }
+.vs-label { font-size: 11px; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+.vs-good .vs-label { color: #3B6D11; }
+.vs-bad .vs-label { color: #A32D2D; }
+.vs-text { font-size: 12.5px; color: #333; line-height: 1.7; }
+
+/* ── Callout ── */
+.callout {
+  background: #f2f1f8;
+  border-left: 4px solid #534AB7;
+  border-radius: 0 10px 10px 0;
+  padding: 12px 14px;
+  margin: 12px 0;
+  font-size: 13.5px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* ── 表格 ── */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 320px; }
+th { background: #f5f4f0; color: #666; font-weight: 600; padding: 8px 10px; text-align: left; border-bottom: 1px solid #e8e8e8; }
+td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; color: #333; }
+tr:last-child td { border-bottom: none; }
+.good { color: #27500A; font-weight: 700; }
+.bad { color: #712B13; }
+
+/* ── 引用框 ── */
+.citation {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.7;
+  font-style: italic;
+  margin: 12px 0;
+}
+.citation a { color: #534AB7; }
+
+/* ── 重点框 ── */
+.highlight-box {
+  border: 2px solid #534AB7;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+  background: #faf9ff;
+}
+.highlight-box .card-title { color: #3C3489; }
+
+/* ── 上下翻页按钮 ── */
+.nav-between {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+.nb-btn {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #666;
+  cursor: pointer;
+  min-height: 44px;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+.nb-btn.primary {
+  background: #4a41b0;
+  color: #fff;
+  border-color: #4a41b0;
+}
+.nb-btn:active { opacity: 0.8; }
+
+/* ── 底部 ── */
+.footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+.footer a { color: #534AB7; }
+
+/* ── 顶部进度条 ── */
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(90deg, #534AB7, #6c5ce7);
+  transition: width 0.3s;
+  width: 20%;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">肝癌 · 免疫治疗 · 生物标志物</div>
+  <h1>外周血"战斗中"的免疫细胞<br>能预测肝癌免疫治疗效果吗？</h1>
+  <p>一篇2026年《免疫学前沿》原创研究，用通俗语言带你读懂核心发现。</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">Front. Immunol. 2026</div>
+    <div class="hero-meta-item">55例HCC患者</div>
+    <div class="hero-meta-item">多色流式细胞术</div>
+  </div>
+</div>
+
+<div class="nav-wrap" id="navWrap">
+  <div class="nav-inner">
+    <button class="nav-tab active" onclick="go(0)">① 背景</button>
+    <button class="nav-tab" onclick="go(1)">② 研究设计</button>
+    <button class="nav-tab" onclick="go(2)">③ 核心发现</button>
+    <button class="nav-tab" onclick="go(3)">④ 反直觉对比</button>
+    <button class="nav-tab" onclick="go(4)">⑤ 意义与局限</button>
+  </div>
+</div>
+
+<div class="progress-bar" id="progBar"></div>
+
+<div class="main">
+
+<!-- ── Section 0 ── -->
+<div class="section show" id="s0">
+  <div class="sec-header">
+    <h2>背景：一个未解决的临床难题</h2>
+    <p>在读懂这篇文章之前，先了解它要解决什么问题</p>
+  </div>
+
+  <div class="card card-accent">
+    <div class="body-text">
+      <p><span class="hl">肝细胞癌（HCC）</span>是全球第六大癌症，癌症死亡第三大原因。大多数患者确诊时已是晚期，无法手术，只能依赖药物治疗。</p>
+      <p>近年来，靶向 PD-1 或 PD-L1 的<span class="hl">免疫检查点抑制剂（ICT）</span>改变了HCC治疗格局。这类药物的原理是"解除刹车"：肿瘤会让免疫细胞踩刹车（PD-1/PD-L1通路），药物阻断这个信号，让免疫系统重新攻击肿瘤。</p>
+    </div>
+  </div>
+
+  <div class="metric-row">
+    <div class="metric">
+      <div class="metric-val" style="color:#534AB7">~15%</div>
+      <div class="metric-label">PD-1单药治疗客观缓解率</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val" style="color:#0F6E56">联合</div>
+      <div class="metric-label">加TKI或贝伐单抗可提升疗效</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val" style="color:#993C1D">有限</div>
+      <div class="metric-label">现有预测生物标志物价值</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">核心矛盾：有人有效，有人无效，事先不知道</div>
+    <div class="body-text">
+      <p>PD-1/PD-L1药物对部分患者效果显著，对另一部分几乎无效——但医生事先很难判断谁会受益。</p>
+      <p>常用于其他癌症的预测指标（PD-L1表达、肿瘤突变负荷TMB等）在HCC中<span class="hl-coral">预测价值有限</span>，且HCC很少有高TMB或MMR缺陷。</p>
+      <p>更大的困难是：这些检测都需要<span class="hl-coral">肿瘤组织活检</span>——肝癌活检风险高、异质性大，临床难以常规实施。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">研究者的想法：从外周血中找答案</div>
+    <div class="body-text">
+      <p>外周血（普通抽血）比活检更简单、风险低、可反复采样。</p>
+      <p>研究者想知道：外周血中免疫细胞的<span class="hl-teal">"战斗激活状态"</span>——而非仅仅是细胞数量——能不能预测患者对免疫治疗的应答？</p>
+    </div>
+  </div>
+
+  <div class="nav-between">
+    <span></span>
+    <button class="nb-btn primary" onclick="go(1)">下一节：研究怎么做 →</button>
+  </div>
+</div>
+
+<!-- ── Section 1 ── -->
+<div class="section" id="s1">
+  <div class="sec-header">
+    <h2>研究设计：怎么做的？</h2>
+    <p>安徽医科大学第二附属医院真实世界队列研究</p>
+  </div>
+
+  <div class="flow-list">
+    <div class="flow-box">55例HCC患者</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">PD-1/PD-L1治疗</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">治疗期间抽血</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">流式细胞术检测</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">对比治疗应答</div>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-purple">三组治疗方案及应答率</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>治疗方案</th><th>人数</th><th>ORR</th></tr></thead>
+        <tbody>
+          <tr><td>ICT 单药</td><td>17例</td><td>29.4%</td></tr>
+          <tr><td>ICT + TKI（如仑伐替尼）</td><td>22例</td><td class="good">54.5% ↑</td></tr>
+          <tr><td>ICT + 贝伐单抗</td><td>16例</td><td>37.5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:#aaa;margin-top:8px">ORR=客观缓解率（完全缓解+部分缓解患者比例）</p>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-teal">检测了哪些免疫指标？</div>
+    <div class="body-text" style="margin-bottom: 10px;"><p>研究聚焦三类<span class="hl">细胞毒性淋巴细胞</span>（免疫系统的"杀手部队"）：</p></div>
+    <div class="finding-row">
+      <div class="fi-icon fi-purple">T</div>
+      <div class="finding-text"><strong>CD8⁺ T细胞（CTL）</strong>——经典"杀手T细胞"，专门识别并消灭肿瘤细胞，适应性免疫的核心效应细胞</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-teal">NK</div>
+      <div class="finding-text"><strong>NK细胞（自然杀伤细胞）</strong>——先天免疫"先锋队"，无需预先识别就能自发攻击异常细胞，反应更快</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-coral">NT</div>
+      <div class="finding-text"><strong>NKT细胞</strong>——兼具T细胞和NK细胞特性的"两栖部队"，在抗肿瘤免疫中发挥桥梁作用</div>
+    </div>
+    <div class="callout" style="margin-top:12px">
+      对每类细胞，检测两项功能指标：<br>
+      <span class="hl">GZMB（颗粒酶B）</span> — 直接杀伤武器，代表杀伤能力<br>
+      <span class="hl-teal">IFN-γ（干扰素γ）</span> — 激活后的"作战信号"，代表战斗状态
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">疗效如何判定？</div>
+    <div class="body-text">
+      <p>增强CT/MRI评估肿瘤变化（mRECIST标准）：</p>
+      <p><span class="hl-teal">应答者（n=23）</span>：肿瘤明显缩小（完全或部分缓解）<br>
+      <span class="hl-coral">非应答者（n=32）</span>：肿瘤稳定或进展</p>
+    </div>
+  </div>
+
+  <div class="nav-between">
+    <button class="nb-btn" onclick="go(0)">← 上一节</button>
+    <button class="nb-btn primary" onclick="go(2)">下一节：核心发现 →</button>
+  </div>
+</div>
+
+<!-- ── Section 2 ── -->
+<div class="section" id="s2">
+  <div class="sec-header">
+    <h2>核心发现：谁是真正的预测指标？</h2>
+    <p>最重要的结论——并非所有免疫指标都有意义</p>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-coral">发现一：细胞数量没有差异</div>
+    <div class="body-text">
+      <p>应答者和非应答者之间，CTL、NK、NKT细胞的<span class="hl-coral">数量比例没有显著差异</span>。</p>
+      <p>光看"有多少免疫细胞"是不够的——关键在于这些细胞<span class="hl">是否处于激活的战斗状态</span>。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-teal">发现二：IFN-γ⁺细胞是最强预测指标</div>
+    <div class="body-text"><p><span class="hl-teal">IFN-γ阳性（IFN-γ⁺）细胞比例</span>在三类细胞中均显著高于非应答者。各指标判别能力（AUC）：</p></div>
+    <div class="auc-section">
+      <div class="auc-row"><span class="auc-name">IFN-γ⁺ CTL%</span><div class="auc-track"><div class="auc-fill fill-purple" style="width:82%">0.82 ★</div></div></div>
+      <div class="auc-row"><span class="auc-name">IFN-γ⁺ NKT%</span><div class="auc-track"><div class="auc-fill fill-teal" style="width:81%">0.81 ★</div></div></div>
+      <div class="auc-row"><span class="auc-name">IFN-γ⁺ NK%</span><div class="auc-track"><div class="auc-fill fill-coral" style="width:75%">0.75</div></div></div>
+      <div class="auc-row"><span class="auc-name">GZMB⁺ NK%</span><div class="auc-track"><div class="auc-fill fill-gray" style="width:64%">0.64</div></div></div>
+      <div class="auc-row"><span class="auc-name">仅临床模型</span><div class="auc-track"><div class="auc-fill fill-gray" style="width:62.6%">0.63</div></div></div>
+    </div>
+    <p style="font-size:11px;color:#aaa;margin-top:4px">AUC越接近1.0，预测准确性越高；0.5=随机猜测</p>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-purple">发现三：联合临床指标，预测效果大幅提升</div>
+    <div class="body-text">
+      <p>传统临床模型（AFP + BCLC分期 + 肝功能分级 + 治疗方案）AUC仅为0.63。</p>
+      <p>加入IFN-γ⁺比例后：</p>
+      <p>• 加IFN-γ⁺ CTL% → AUC = <span class="hl">0.83</span>（P=0.012）<br>
+         • 加IFN-γ⁺ NKT% → AUC = <span class="hl">0.81</span>（P=0.017）<br>
+         • 加IFN-γ⁺ NK%  → AUC = <span class="hl">0.77</span>（P=0.039）</p>
+      <p>多因素回归校正后，IFN-γ⁺比例仍是<span class="hl-teal">独立预测因子</span>（每升高1%，应答OR约1.05～1.09）。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-amber">发现四：与肿瘤标志物变化也相关</div>
+    <div class="body-text">
+      <p>IFN-γ⁺细胞比例越高，治疗后<span class="hl">AFP</span>和<span class="hl">PIVKA-II</span>（肝癌标志物）下降越明显——说明它不仅预测"谁会应答"，还能反映<span class="hl-teal">肿瘤实际在退缩</span>。</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>总结：</strong>外周血中"正在战斗"（IFN-γ阳性）的CTL、NK、NKT细胞比例，是预测肝癌免疫治疗应答的有力指标，为传统临床模型带来显著增量价值。
+  </div>
+
+  <div class="nav-between">
+    <button class="nb-btn" onclick="go(1)">← 上一节</button>
+    <button class="nb-btn primary" onclick="go(3)">下一节：反直觉发现 →</button>
+  </div>
+</div>
+
+<!-- ── Section 3 ── -->
+<div class="section" id="s3">
+  <div class="sec-header">
+    <h2>关键对比：一个反直觉的发现</h2>
+    <p>细胞内IFN-γ 与 血清IFN-γ——两者意义截然不同</p>
+  </div>
+
+  <div class="body-text" style="margin-bottom:12px">
+    <p>研究者自然提出：既然细胞产生IFN-γ更多，血液中游离的IFN-γ蛋白是否也更高、也能预测疗效？</p>
+    <p>答案出乎意料：<span class="hl-coral">恰恰相反。</span></p>
+  </div>
+
+  <div class="compare-row">
+    <div class="compare-card vs-good">
+      <div class="vs-label">✓ 细胞内IFN-γ⁺比例<br>（流式胞内染色）</div>
+      <div class="vs-text">应答者显著<strong>更高</strong><br>AUC=0.75–0.82<br>P &lt; 0.0001<br>有效预测指标</div>
+    </div>
+    <div class="compare-card vs-bad">
+      <div class="vs-label">✗ 血清IFN-γ浓度<br>（蛋白检测）</div>
+      <div class="vs-text">应答者反而<strong>更低</strong><br>AUC=0.67<br>P=0.07<br>预测价值有限</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-purple">为什么会出现这个"矛盾"？</div>
+    <div class="finding-row">
+      <div class="fi-icon fi-teal">①</div>
+      <div class="finding-text"><strong>细胞内IFN-γ⁺比例</strong>直接反映特定免疫细胞被激活、正在对抗肿瘤的状态——是真正在打仗的战士。</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-coral">②</div>
+      <div class="finding-text"><strong>血清IFN-γ</strong>来源复杂，包括耗竭T细胞、炎症细胞等。非应答者血清IFN-γ更高，很可能是<strong>慢性炎症或免疫紊乱</strong>的产物，并非有效的抗肿瘤信号。</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-amber">③</div>
+      <div class="finding-text">高血清IFN-γ在某些情况下反而与T细胞<strong>耗竭和PD-L1上调</strong>相关——可能是免疫抑制的标志，而非激活的证据。</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>核心启示：</strong>检测"细胞有没有分泌IFN-γ的能力"（功能状态）远比检测"血液中有多少IFN-γ蛋白"（结果产物）更有意义。这正是需要<strong>流式细胞术胞内染色（ICS）</strong>，而非简单蛋白检测（ELISA/CBA）的原因。
+  </div>
+
+  <div class="card">
+    <div class="card-title">📌 一个通俗的类比</div>
+    <div class="body-text">
+      <p>想象战场上有两种"战斗力"指标：</p>
+      <p>① 观察<span class="hl-teal">士兵是否手持武器、正在冲锋</span>（= 细胞内IFN-γ⁺比例）</p>
+      <p>② 数<span class="hl-coral">战场上的弹壳数量</span>（= 血清IFN-γ浓度）</p>
+      <p>弹壳多不一定代表我方在有效进攻——也可能是敌方火力猛，或者我方乱打。真正重要的，是己方战士是否在主动战斗。</p>
+    </div>
+  </div>
+
+  <div class="nav-between">
+    <button class="nb-btn" onclick="go(2)">← 上一节</button>
+    <button class="nb-btn primary" onclick="go(4)">下一节：意义与局限 →</button>
+  </div>
+</div>
+
+<!-- ── Section 4 ── -->
+<div class="section" id="s4">
+  <div class="sec-header">
+    <h2>意义与局限：如何评价这项研究？</h2>
+    <p>综合评估这篇文章的贡献和不足</p>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-teal">临床意义</div>
+    <div class="finding-row">
+      <div class="fi-icon fi-teal">①</div>
+      <div class="finding-text"><strong>无创替代活检：</strong>外周血检测比肿瘤活检更简单、风险更低、可反复，有望成为动态监测的常规工具。</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-purple">②</div>
+      <div class="finding-text"><strong>功能状态优于细胞数量：</strong>未来免疫监测应更关注<span class="hl">细胞的激活与效应状态</span>，而非单纯统计细胞比例。</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-teal">③</div>
+      <div class="finding-text"><strong>显著增量预测价值：</strong>在AFP、BCLC分期等常规指标基础上，加入IFN-γ⁺比例可将AUC从0.63提升至0.83，统计学改善显著。</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-amber">④</div>
+      <div class="finding-text"><strong>与NK/CTL功能检测高度契合：</strong>本研究的检测流程（PMA刺激+胞内染色+多色流式）与临床NK/CTL杀伤功能检测方法一致，便于临床转化。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tag tag-coral">研究局限</div>
+    <div class="finding-row">
+      <div class="fi-icon fi-coral">!</div>
+      <div class="finding-text"><strong>样本量较小（n=55）：</strong>三种方案混合分析可能引入组间变异，需更大规模队列验证。</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-coral">!</div>
+      <div class="finding-text"><strong>仅单时间点取样：</strong>不同患者采样时机不同，缺乏治疗前基线数据和纵向动态追踪。</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-coral">!</div>
+      <div class="finding-text"><strong>机制未深入探究：</strong>IFN-γ⁺淋巴细胞与应答的关系，究竟是原因还是结果，还需进一步研究。</div>
+    </div>
+    <div class="finding-row">
+      <div class="fi-icon fi-coral">!</div>
+      <div class="finding-text"><strong>尚待独立验证：</strong>须在外部独立队列中重复验证，才能推向常规临床应用。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="card-title">🎯 一句话总结这篇文章</div>
+    <div class="body-text">
+      <p>在肝癌PD-1/PD-L1免疫治疗中，<span class="hl">外周血IFN-γ阳性细胞毒性淋巴细胞（CTL、NK、NKT）的比例</span>是一项有潜力的无创预测标志物。</p>
+      <p>它反映的是免疫细胞<span class="hl-teal">"有没有在战斗"</span>，而非简单的"有多少兵"，也不是血液里"有多少武器残余"——这一区别，正是本研究最重要的方法论贡献。</p>
+    </div>
+  </div>
+
+  <div class="citation">
+    Lu H, Fang H, Ruan M, et al. Association between peripheral IFN-γ⁺ cytotoxic lymphocytes and response to PD-1/PD-L1-based therapy in hepatocellular carcinoma. <em>Front. Immunol.</em> 2026;17:1738116.<br>
+    <a href="https://doi.org/10.3389/fimmu.2026.1738116">doi: 10.3389/fimmu.2026.1738116</a>（开放获取 CC BY）
+  </div>
+
+  <div class="nav-between">
+    <button class="nb-btn" onclick="go(3)">← 上一节</button>
+    <button class="nb-btn" onclick="go(0)">回到开头 ↩</button>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<div class="footer">
+  <p>本页面为文献科普解读，仅供学习交流，不构成临床诊疗建议。</p>
+  <p>原始文献：<a href="https://doi.org/10.3389/fimmu.2026.1738116">doi: 10.3389/fimmu.2026.1738116</a></p>
+</div>
+
+<script>
+  var total = 5;
+  function go(i) {
+    var secs = document.querySelectorAll('.section');
+    var tabs = document.querySelectorAll('.nav-tab');
+    for (var k = 0; k < secs.length; k++) {
+      secs[k].classList.remove('show');
+      tabs[k].classList.remove('active');
+    }
+    secs[i].classList.add('show');
+    tabs[i].classList.add('active');
+    // 进度条
+    document.getElementById('progBar').style.width = ((i + 1) / total * 100) + '%';
+    // 滚动到顶部
+    window.scrollTo(0, 0);
+    // tab 居中
+    var navWrap = document.getElementById('navWrap');
+    var activeTab = tabs[i];
+    var tabLeft = activeTab.offsetLeft;
+    var tabWidth = activeTab.offsetWidth;
+    var wrapWidth = navWrap.offsetWidth;
+    navWrap.scrollLeft = tabLeft - wrapWidth / 2 + tabWidth / 2;
+  }
+</script>
+</body>
+</html>
